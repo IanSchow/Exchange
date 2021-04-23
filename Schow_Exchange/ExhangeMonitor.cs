@@ -6,13 +6,6 @@ using System.Threading.Tasks;
 
 namespace Schow_Exchange
 {
-    // Ian Schow
-    // IT112 Section
-    // NOTES: This was a pretty fun project to work on.
-    // For the most part, it wasn't too difficult, though
-    // my trouble with the Euro symbol made it a bit more challenging
-    // than it had to be.
-    // ALL BEHAVIORS IMPLEMENTED
     class ExhangeMonitor
     {
         int _counter = 0;
@@ -31,9 +24,9 @@ namespace Schow_Exchange
         private float Convert2USD(float value, string currencyType) 
         {
             // Checking to see if the value is currently in USD, and converting it if it's not
-            if (currencyType.ToLower() != "en-US")
+            if (currencyType.ToLower() != "usd")
             {
-                value = Exchanger.Converter(value, currencyType, "en-US");
+                value = Exchanger.Converter(value, currencyType, "usd");
             }
             return value;
         }

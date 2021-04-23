@@ -3,6 +3,13 @@ using System.Globalization;
 
 namespace Schow_Exchange
 {
+    // Ian Schow
+    // IT112 Section
+    // NOTES: This was a pretty fun project to work on.
+    // For the most part, it wasn't too difficult, though
+    // my trouble with the Euro symbol made it a bit more challenging
+    // than it had to be.
+    // ALL BEHAVIORS IMPLEMENTED
     class Program
     {
         static void Main(string[] args)
@@ -78,23 +85,23 @@ namespace Schow_Exchange
             // and assigning it to a culture keyword if it is
             if (currencyType.ToLower() == "usd")
             {
-                currencyType = "en-US";
+                currencyType = "USD";
                 success = true;               
             }
             else if (currencyType.ToLower() == "gbp")
             {
                 
-                currencyType = "en-GB";
+                currencyType = "GBP";
                 success = true;
             }
             else if (currencyType.ToLower() == "can")
             {
-                currencyType = "en-CA";
+                currencyType = "CAN";
                 success = true;
             }
             else if (currencyType.ToLower() == "eur")
             {
-                currencyType = "en-FR";
+                currencyType = "EUR";
                 success = true;
             }
             else
@@ -131,14 +138,8 @@ namespace Schow_Exchange
 
         static void PresentConversion(float startVal, float endVal, string startCur, string endCur)
         {
-            // Presenting how much their initial value is worth in the converted currency,
-            // using CultureInfo to determine how the currency should be formatted
-
-            // DISCLAIMER: From what I've read, certain Visual Studio settings make the Euro symbol look like a question mark.
-            // I'm trying to debug this on my end, but it might be a settings thing, not a code thing.
-            CultureInfo startCul = new CultureInfo(startCur);
-            CultureInfo endCul = new CultureInfo(endCur);
-            Console.WriteLine("Your initial value of " + startVal.ToString("C", startCul) + " converts to " + endVal.ToString("C", endCul) + ".");
+            // Presenting how much their initial value is worth in the converted currency
+            Console.WriteLine(String.Format("Your initial value of {0:C2} in " + startCur + " converts to ", startVal) + String.Format("{0:C2} in " + endCur + ".", endVal));
             Console.WriteLine();
         }
 

@@ -19,40 +19,40 @@ namespace Schow_Exchange
         {
             // Figuring out what the initial currency is and what it should be converted to,
             // and then calling the correct conversion method accordingly
-            if (convertFrom == "en-US" && convertTo == "en-GB")
+            if (convertFrom.ToLower() == "usd" && convertTo.ToLower() == "gbp")
             {
                 value = USD_GBP(value);
-            } else if (convertFrom == "en-US" && convertTo == "en-CA")
+            } else if (convertFrom.ToLower() == "usd" && convertTo.ToLower() == "can")
             {
                 value = USD_CAN(value);
-            } else if (convertFrom == "en-US" && convertTo == "en-FR")
+            } else if (convertFrom.ToLower() == "usd" && convertTo.ToLower() == "eur")
             {
                 value = USD_EUR(value);
-            } else if (convertFrom == "en-GB" && convertTo == "en-US")
+            } else if (convertFrom.ToLower() == "gbp" && convertTo.ToLower() == "usd")
             {
                 value = GBP_USD(value);
-            } else if (convertFrom == "en-GB" && convertTo == "en-CA")
+            } else if (convertFrom.ToLower() == "gbp" && convertTo.ToLower() == "can")
             {
                 value = GBP_CAN(value);
-            } else if (convertFrom == "en-GB" && convertTo == "en-FR")
+            } else if (convertFrom.ToLower() == "gbp" && convertTo.ToLower() == "eur")
             {
                 value = GBP_EUR(value);
-            } else if (convertFrom == "en-CA" && convertTo == "en-US")
+            } else if (convertFrom.ToLower() == "can" && convertTo.ToLower() == "usd")
             {
                 value = CAN_USD(value);
-            } else if (convertFrom == "en-CA" && convertTo == "en-GB")
+            } else if (convertFrom.ToLower() == "can" && convertTo.ToLower() == "gbp")
             {
                 value = CAN_GBP(value);
-            } else if (convertFrom == "en-CA" && convertTo == "en-FR")
+            } else if (convertFrom.ToLower() == "can" && convertTo.ToLower() == "eur")
             {
                 value = CAN_EUR(value);
-            } else if (convertFrom == "en-FR" && convertTo == "en-US")
+            } else if (convertFrom.ToLower() == "eur" && convertTo.ToLower() == "usd")
             {
                 value = EUR_USD(value);
-            } else if (convertFrom == "en-FR" && convertTo == "en-GB")
+            } else if (convertFrom.ToLower() == "eur" && convertTo.ToLower() == "gbp")
             {
                 value = EUR_GBP(value);
-            } else if (convertFrom == "en-FR" && convertTo == "en-CA")
+            } else if (convertFrom.ToLower() == "eur" && convertTo.ToLower() == "can")
             {
                 value = EUR_CAN(value);
             }
